@@ -1202,6 +1202,7 @@
 		blast_range -= round(health_percent * 10) //one additional range for each missing 10% of health
 
 /obj/item/hierophant_club/update_icon_state()
+	. = ..()
 	icon_state = inhand_icon_state = "hierophant_club[timer <= world.time ? "_ready":""][(beacon && !QDELETED(beacon)) ? "":"_beacon"]"
 
 /obj/item/hierophant_club/proc/prepare_icon_update()
