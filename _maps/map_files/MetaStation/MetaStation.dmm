@@ -47540,7 +47540,7 @@
 /area/security/brig)
 "nyj" = (
 /obj/machinery/button/door/directional/south{
-	id = aux_shutter;
+	id = "aux_shutter";
 	name = "Radiation Shutter Control";
 	req_access_txt = "10"
 	},
@@ -65691,7 +65691,7 @@
 "ttR" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters/radiation/preopen{
-	id = aux_shutter;
+	id = "aux_shutter";
 	name = "Radiation Shutters"
 	},
 /turf/open/floor/plating,
