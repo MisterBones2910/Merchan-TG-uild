@@ -47541,7 +47541,8 @@
 "nyj" = (
 /obj/machinery/button/door/directional/south{
 	id = singuloshutter;
-	name = "Radiation Shutters"
+	name = "Radiation Shutters";
+	req_access_txt = "10"
 	},
 /turf/open/floor/plating,
 /area/engineering/secondary_engine)
