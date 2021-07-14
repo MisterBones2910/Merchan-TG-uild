@@ -43,12 +43,6 @@
 			B.take_damage(energy*0.6)
 			movement_range = 0
 
-/obj/effect/accelerated_particle/Crossed(atom/A)
-	. = ..()
-	if(isliving(A))
-		toxmob(A)
-
-
 /obj/effect/accelerated_particle/ex_act(severity, target)
 	qdel(src)
 

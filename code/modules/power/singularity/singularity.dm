@@ -134,9 +134,6 @@
 		step(src, drifting_dir)
 	return
 
-/obj/singularity/Crossed(atom/A)
-	..()
-	consume(A)
 
 /obj/singularity/Bumped(atom/movable/AM)
 	consume(AM)
