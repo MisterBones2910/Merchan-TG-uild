@@ -47541,7 +47541,7 @@
 "nyj" = (
 /obj/machinery/button/door/directional/south{
 	id = aux_shutter;
-	name = "Radiation Shutters";
+	name = "Radiation Shutter Control";
 	req_access_txt = "10"
 	},
 /turf/open/floor/plating,
@@ -65691,7 +65691,8 @@
 "ttR" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters/radiation/preopen{
-	id = aux_shutter
+	id = aux_shutter;
+	name = "Radiation Shutters"
 	},
 /turf/open/floor/plating,
 /area/engineering/secondary_engine)
