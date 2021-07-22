@@ -16,15 +16,3 @@
 	if(.)
 		return
 	return user.mob.emote(emote_key, intentional=TRUE)
-
-/datum/keybinding/emote/scream
-	hotkey_keys = list("CtrlS")
-	name = "scream"
-	full_name = "Scream"
-	description = "REEEEEEEEEEEEEEEEEEEEEEEE!"
-
-/datum/keybinding/emote/fart
-	hotkey_keys = list("CtrlF")
-	name = "fart"
-	full_name = "Fart"
-	description = "Uh oh, stinky!"
