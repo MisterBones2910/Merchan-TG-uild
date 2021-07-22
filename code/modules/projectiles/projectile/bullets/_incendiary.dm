@@ -44,8 +44,8 @@
 
 /// The main powerhouse of the solid fuel canister
 /obj/projectile/bullet/incendiary/backblast/solidfuel
-    damage = 75
-    fire_stacks = 6
+	damage = 75
+	fire_stacks = 6
 
 /// we only try to knock back the first 6 items per tile
 #define BACKBLAST_MAX_ITEM_KNOCKBACK 6
