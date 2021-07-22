@@ -953,6 +953,7 @@
 	for(var/X in internal_organs)
 		var/obj/item/organ/I = X
 		I.Insert(src)
+	internal_organs += new /obj/item/organ/butt
 
 
 /mob/living/carbon/vv_get_dropdown()
