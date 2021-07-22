@@ -191,16 +191,7 @@
 					var/turf/target = get_turf(O)
 					var/range = 7
 					var/turf/new_turf
-					var/new_dir
-					switch(user.dir)
-						if(1)
-							new_dir = 2
-						if(2)
-							new_dir = 1
-						if(4)
-							new_dir = 8
-						if(8)
-							new_dir = 4
+					var/new_dir = REVERSE_DIR(user.dir)
 					for(var/i = 1; i < range; i++)
 						new_turf = get_step(target, new_dir)
 						target = new_turf
@@ -402,4 +393,3 @@
 	else
 		qdel(noogie)
 		to_chat(user, "<span class='warning'>You're incapable of noogie'ing in your current state.</span>")
-
