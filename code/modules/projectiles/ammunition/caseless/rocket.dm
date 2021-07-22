@@ -16,6 +16,12 @@
 	desc = "An 84mm High Explosive rocket. This one isn't quite as devastating."
 	projectile_type = /obj/projectile/bullet/a84mm/weak
 
+/obj/item/ammo_casing/caseless/rocket/solidfuel
+	name ="\improper Solid fuel canister"
+	desc ="A space grade solid fuel canister, rigged to sear everything during the launcher backblast."
+	icon_state = "solidfuel_syndie"
+	projectile_type = /obj/projectile/bullet/a84mm/solidfuel
+
 /obj/item/ammo_casing/caseless/a75
 	desc = "A .75 bullet casing."
 	caliber = CALIBER_75

@@ -14,6 +14,8 @@
 	var/angle_spread
 	/// How far each plume of fire will fly, assuming it doesn't hit a mob
 	var/range
+	/// What kind of backblast projectile will be fired.
+	var/backblast_type
 
 /datum/element/backblast/Attach(datum/target, plumes = 4, angle_spread = 48, range = 6)
 	. = ..()
@@ -64,7 +66,12 @@
 /// For firing an actual backblast pellet
 /datum/element/backblast/proc/pew(turf/target_turf, obj/item/gun/weapon, mob/living/user)
 	//Shooting Code:
-	var/obj/projectile/bullet/incendiary/backblast/P = new (get_turf(user))
+	backblast_type = /obj/projectile/bullet/incendiary/backblast
+
+	if(locate(/obj/item/ammo_casing/caseless/rocket/solidfuel) in weapon)
+		backblast_type = /obj/projectile/bullet/incendiary/backblast/solidfuel
+
+	var/obj/projectile/bullet/incendiary/backblast/P = new backblast_type(get_turf(user))
 	P.original = target_turf
 	P.range = range
 	P.fired_from = weapon
