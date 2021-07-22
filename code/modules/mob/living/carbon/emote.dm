@@ -137,7 +137,6 @@
 			user.visible_message("<span class='warning'><b>[user]</b> blows their ass off!</span>", "<span class='warning'>Holy shit, your butt flies off in an arc!</span>")
 		else
 			user.nutrition = max(user.nutrition - rand(2, 10), NUTRITION_LEVEL_STARVING)
-		..()
 		if(!ishuman(user)) //nonhumans don't have the message appear for some reason
 			user.visible_message("<b>[user]</b> [message]")
 
