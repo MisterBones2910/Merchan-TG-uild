@@ -248,7 +248,7 @@
 			ears.Insert(src)
 		ears.setOrganDamage(0)
 
-		if(!getorganslot("butt"))
+		if(!getorganslot(ORGAN_SLOT_BUTT))
 			if(ishuman(src) || ismonkey(src))
 				var/obj/item/organ/butt/B = new()
 				B.Insert(src)
