@@ -69,7 +69,7 @@
 			if(get_sharpness(I) == SHARP_EDGED || get_sharpness(I) == SHARP_POINTY)
 				owner.bleed(4)
 
-/obj/item/organ/butt/attackby(var/obj/item/W, mob/user as mob, params) // copypasting bot manufucturing process, im a lazy fuck
+/obj/item/organ/butt/attackby(obj/item/W, mob/living/user, params) // copypasting bot manufucturing process, im a lazy fuck
 
 	if(istype(W, /obj/item/bodypart/l_arm/robot) || istype(W, /obj/item/bodypart/r_arm/robot))
 		if(istype(src, /obj/item/organ/butt/bluebutt)) //nobody sprited a blue butt buttbot
