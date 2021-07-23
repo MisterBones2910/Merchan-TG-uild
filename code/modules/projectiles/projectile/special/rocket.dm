@@ -83,11 +83,10 @@
 
 /obj/projectile/bullet/a84mm/solidfuel/on_hit(atom/target, blocked = 0)
 	if(iscarbon(target))
-		if(isliving(target))
-			var/mob/living/carbon/M = target
-			M.emote("scream")
-			M.adjust_fire_stacks(fire_stacks)
-			M.IgniteMob()
+		var/mob/living/carbon/M = target
+		M.emote("scream")
+		M.adjust_fire_stacks(fire_stacks)
+		M.IgniteMob()
 		explosion(target, devastation_range = 0, heavy_impact_range = 0, light_impact_range = 0, flame_range = 2)
 	else
 		explosion(target, devastation_range = 0, heavy_impact_range = 0, light_impact_range = 1, flame_range = 2)
