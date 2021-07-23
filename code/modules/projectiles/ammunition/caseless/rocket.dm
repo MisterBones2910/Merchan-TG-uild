@@ -4,6 +4,7 @@
 	caliber = CALIBER_84MM
 	icon_state = "srm-8"
 	projectile_type = /obj/projectile/bullet/a84mm/he
+	backblast_type = /obj/projectile/bullet/incendiary/backblast
 
 /obj/item/ammo_casing/caseless/rocket/hedp
 	name = "\improper PM-9HEDP"
@@ -21,6 +22,7 @@
 	desc ="A space grade solid fuel canister, rigged to sear everything during the launcher backblast."
 	icon_state = "solidfuel_syndie"
 	projectile_type = /obj/projectile/bullet/a84mm/solidfuel
+	backblast_type = /obj/projectile/bullet/incendiary/backblast/solidfuel
 
 /obj/item/ammo_casing/caseless/a75
 	desc = "A .75 bullet casing."
