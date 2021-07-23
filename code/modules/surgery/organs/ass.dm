@@ -92,7 +92,7 @@
 	playsound(src, 'sound/effects/fart.ogg', 50, 1, 5)
 
 /mob/living/carbon/proc/regeneratebutt()
-	if(!getorganslot("butt"))
+	if(!getorganslot(ORGAN_SLOT_BUTT))
 		if(ishuman(src) || ismonkey(src))
 			var/obj/item/organ/butt/B = new()
 			B.Insert(src)
