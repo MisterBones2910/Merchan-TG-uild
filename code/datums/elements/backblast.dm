@@ -65,9 +65,8 @@
 /datum/element/backblast/proc/pew(turf/target_turf, obj/item/gun/weapon, mob/living/user)
 	//Shooting Code:
 	var/obj/projectile/bullet/P
-	if (istype(weapon, /obj/item/gun/ballistic))
-		var/obj/item/gun/ballistic/W = weapon
-		P = new W.chambered.backblast_type(get_turf(user))
+	if (weapon.chambered.backblast_type)
+		P = new weapon.chambered.backblast_type(get_turf(user))
 	else
 		P = new /obj/projectile/bullet/incendiary/backblast(get_turf(user))
 	P.original = target_turf
