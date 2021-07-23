@@ -216,7 +216,7 @@
 
 			if(reach_organs && iscarbon(src))
 				var/mob/living/carbon/carbon_src = src
-				if(target in carbon_src.bodyparts || target in carbon_src.internal_organs)
+				if((target in carbon_src.bodyparts) || (target in carbon_src.internal_organs))
 					return TRUE
 
 			//Storage and things with reachable internal atoms need add to next here. Or return COMPONENT_ALLOW_REACH.
