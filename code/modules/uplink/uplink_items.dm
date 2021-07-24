@@ -87,6 +87,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	var/refund_amount = 0 // specified refund amount in case there needs to be a TC penalty for refunds.
 	var/refundable = FALSE
 	var/surplus = 100 // Chance of being included in the surplus crate.
+	var/surplus_nullcrates //Chance of being included in null crates. null = pull from surplus
 	var/cant_discount = FALSE
 	var/limited_stock = -1 //Setting this above zero limits how many times this item can be bought by the same traitor in a round, -1 is unlimited
 	/// A bitfield to represent what uplinks can purchase this item.
@@ -98,6 +99,11 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	var/restricted = FALSE // Adds restrictions for VR/Events
 	var/list/restricted_species //Limits items to a specific species. Hopefully.
 	var/illegal_tech = TRUE // Can this item be deconstructed to unlock certain techweb research nodes?
+
+/datum/uplink_item/New()
+	. = ..()
+	if(isnull(surplus_nullcrates))
+		surplus_nullcrates = surplus
 
 /datum/uplink_item/proc/get_discount()
 	return pick(4;0.75,2;0.5,1;0.25)
@@ -887,6 +893,13 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	item = /obj/item/ammo_casing/caseless/rocket/hedp
 	cost = 6
 
+/datum/uplink_item/ammo/rocket/solidfuel
+	name = "84mm Solid Fuel Canister"
+	desc = "A solid fuel canister, meant for test firing rocket launchers. \
+	These canisters have been heavily modified to burn anything behind you much, much worse."
+	item = /obj/item/ammo_casing/caseless/rocket/solidfuel
+	cost = 1
+
 /datum/uplink_item/ammo/toydarts
 	name = "Box of Riot Darts"
 	desc = "A box of 40 Donksoft riot darts, for reloading any compatible foam dart magazine. Don't forget to share!"
@@ -1427,6 +1440,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	cost = 1
 	surplus = 1
 	illegal_tech = FALSE
+	surplus_nullcrates = 0
 
 /datum/uplink_item/device_tools/frame
 	name = "F.R.A.M.E. PDA Cartridge"
