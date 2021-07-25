@@ -40,3 +40,11 @@
 	icon_state = "setup_stationary-open"
 	shell_to_spawn = /obj/structure/server
 	screw_delay = 10 SECONDS
+
+/obj/item/shell/mech
+	name = "circuit airlock assembly"
+	icon = 'icons/obj/doors/airlocks/station/public.dmi'
+	icon_state = "construction"
+	shell_to_spawn = /obj/vehicle/sealed/mecha/combat/durand/shell
+	screw_delay = 10 SECONDS
+
