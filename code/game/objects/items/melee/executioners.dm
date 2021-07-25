@@ -1,5 +1,6 @@
 #define EXECUTE_INFIDEL 300
 #define EXECUTE_COOLDOWN 100
+GLOBAL_VAR_INIT(nasheed_playing, FALSE)
 
 /obj/item/melee/execution_sword
 	name = "Executioners sword"

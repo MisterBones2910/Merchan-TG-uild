@@ -34,6 +34,3 @@ GLOBAL_VAR_INIT(glowshrooms, 0)
 
 /// If drones are blacklisted from certain sensitive machines
 GLOBAL_VAR_INIT(drone_machine_blacklist_enabled, TRUE)
-
-//the executioner sword
-GLOBAL_VAR_INIT(nasheed_playing, FALSE)
