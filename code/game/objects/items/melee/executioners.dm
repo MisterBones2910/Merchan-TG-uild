@@ -66,9 +66,7 @@ obj/item/melee/execution_sword/attack_self(mob/living/user)
 			nasheed.status = SOUND_STREAM
 			for(var/mob/M in GLOB.player_list)
 				if(M.client.prefs.toggles & SOUND_MIDI)
-					var/user_vol = M.client.admin_music_volume
-					if(user_vol)
-						nasheed.volume = 100 * (user_vol / 100)
+					nasheed.volume = 100 * M.client.admin_music_volume
 					SEND_SOUND(M, nasheed)
 			GLOB.nasheed_playing = TRUE
 			addtimer(CALLBACK(src, .proc/nasheed_end), EXECUTE_INFIDEL)
