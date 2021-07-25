@@ -70,7 +70,6 @@ obj/item/melee/execution_sword/attack_self(mob/living/user)
 					if(user_vol)
 						nasheed.volume = 100 * (user_vol / 100)
 					SEND_SOUND(M, nasheed)
-					nasheed.volume = 100
 			GLOB.nasheed_playing = TRUE
 			addtimer(CALLBACK(src, .proc/nasheed_end), EXECUTE_INFIDEL)
 		if(do_after(user,EXECUTE_INFIDEL, target = target))
