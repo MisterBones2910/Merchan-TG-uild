@@ -62,11 +62,8 @@ obj/item/melee/execution_sword/attack_self(mob/living/user)
 			var/sound/nasheed = new()
 			nasheed.file = nasheed_chosen
 			nasheed.channel = CHANNEL_NASHEED
-			nasheed.frequency = 1
-			nasheed.wait = 1
-			nasheed.repeat = 0
+			nasheed.wait = TRUE
 			nasheed.status = SOUND_STREAM
-			nasheed.volume = 100
 			for(var/mob/M in GLOB.player_list)
 				if(M.client.prefs.toggles & SOUND_MIDI)
 					var/user_vol = M.client.admin_music_volume
