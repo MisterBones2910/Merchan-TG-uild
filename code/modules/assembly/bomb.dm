@@ -149,6 +149,7 @@
 	var/strength = 1
 
 	var/turf/ground_zero = get_turf(loc)
+	bomb_mixture.temperature += 10 //you might ask, why this? lol
 
 	if(bomb_mixture.temperature > (T0C + 400))
 		strength = (fuel_moles/15)
