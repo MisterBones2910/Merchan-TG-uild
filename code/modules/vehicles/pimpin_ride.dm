@@ -100,12 +100,12 @@
 	emagged = TRUE
 
 /obj/vehicle/ridden/lawnmower/Bump(atom/A)
-	if(emagged)
-		if(isliving(A))
-			var/mob/living/M = A
-			M.adjustBruteLoss(25)
-			var/atom/newLoc = get_edge_target_turf(M, get_dir(src, get_step_away(M, src)))
-			M.throw_at(newLoc, 4, 1)
+	if(!emagged || !isliving(A))
+		return
+	var/mob/living/M = A
+	M.adjustBruteLoss(25)
+	var/atom/newLoc = get_edge_target_turf(M, get_dir(src, get_step_away(M, src)))
+	M.throw_at(newLoc, 4, 1)
 
 /obj/vehicle/ridden/lawnmower/Move()
 	..()
