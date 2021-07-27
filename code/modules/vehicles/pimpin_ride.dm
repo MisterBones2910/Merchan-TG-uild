@@ -83,7 +83,6 @@
 	var/emagged = FALSE
 	var/list/drive_sounds = list('sound/effects/mowermove1.ogg', 'sound/effects/mowermove2.ogg')
 	var/list/gib_sounds = list('sound/effects/mowermovesquish.ogg')
-	var/driver
 
 /obj/vehicle/ridden/lawnmower/Initialize()
 	.= ..()
