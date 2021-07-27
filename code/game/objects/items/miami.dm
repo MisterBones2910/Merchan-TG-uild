@@ -1,6 +1,6 @@
 /obj/item/clothing/gloves/miami
 	name = "old bloody rags"
-	desc = "Those rags haven't seen use in eons, they were used tor terrible back then."
+	desc = "Those rags haven't seen use in eons, they were used for terrible back then."
 	icon_state = "miami"
 	attack_verb_continuous = list("butchers")
 	attack_verb_simple = list("butcher")
