@@ -242,6 +242,7 @@
 	name = "Soy Milk"
 	description = "An opaque white liquid made from soybeans."
 	color = "#DFDFC7" // rgb: 223, 223, 199
+	overdose_threshold = 30
 	taste_description = "soy milk"
 	glass_icon_state = "glass_white"
 	glass_name = "glass of soy milk"
@@ -253,6 +254,17 @@
 		M.heal_bodypart_damage(1, 0, 0)
 		. = TRUE
 	..()
+
+/datum/reagent/consumable/soymilk/overdose_process(mob/living/M, delta_time)
+	metabolization_rate = 1 * REAGENTS_METABOLISM
+	if(ishuman(M))
+		if(DT_PROB(5, delta_time))
+			var/static/list/filth = list("silicons", "ethereals", "plasmamen", "moths", "lizards") //Writing the OD speeches was fun, good times.
+			M.say(pick("Opening those soy bottles is hard, i think my strength is waning...", "Honestly, i think [pick (filth)] deserve rights.", "Did you see my profile? I got like 20 thousand likes!", "Did you see the NT announcement where they spoke out about violence against [pick(filth)]? I really should support them more!", "I wish we could get rid of security so there wouldn't be any more violence.", "This place needs more exposed brick walls, maybe even a barcade!"))
+		if(DT_PROB(3.5, delta_time))
+			M.visible_message(pick("<b>[M]</b> looks a bit pale...", "<b>[M]</b>'s eyes lose focus.", "<b>[M]</b> slouches over.", "<b>[M]</b>'s mouth hangs a bit open."))
+	..()
+	return
 
 /datum/reagent/consumable/cream
 	name = "Cream"
