@@ -19,7 +19,7 @@
 
 /obj/machinery/plumbing/Initialize(mapload, bolt = TRUE)
 	. = ..()
-	anchored = bolt
+	set_anchored(bolt)
 	create_reagents(buffer, reagent_flags)
 	AddComponent(/datum/component/simple_rotation, ROTATION_ALTCLICK | ROTATION_CLOCKWISE | ROTATION_COUNTERCLOCKWISE | ROTATION_VERBS, null, CALLBACK(src, .proc/can_be_rotated))
 
@@ -28,7 +28,7 @@
 
 /obj/machinery/plumbing/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>The maximum volume display reads: <b>[reagents.maximum_volume] units</b>.</span>"
+	. += span_notice("The maximum volume display reads: <b>[reagents.maximum_volume] units</b>.")
 
 /obj/machinery/plumbing/wrench_act(mob/living/user, obj/item/I)
 	..()
@@ -36,9 +36,9 @@
 	return TRUE
 
 /obj/machinery/plumbing/plunger_act(obj/item/plunger/P, mob/living/user, reinforced)
-	to_chat(user, "<span class='notice'>You start furiously plunging [name].</span>")
+	to_chat(user, span_notice("You start furiously plunging [name]."))
 	if(do_after(user, 30, target = src))
-		to_chat(user, "<span class='notice'>You finish plunging the [name].</span>")
+		to_chat(user, span_notice("You finish plunging the [name]."))
 		reagents.expose(get_turf(src), TOUCH) //splash on the floor
 		reagents.clear_reagents()
 
@@ -62,7 +62,7 @@
 
 /obj/machinery/plumbing/input/Initialize(mapload, bolt, layer)
 	. = ..()
-	AddComponent(/datum/component/plumbing/simple_supply, bolt, layer)
+	AddComponent(/datum/component/plumbing/supply/south, bolt, layer)
 
 ///We can fill beakers in here and everything. we dont inheret from input because it has nothing that we need
 /obj/machinery/plumbing/output
@@ -73,7 +73,7 @@
 
 /obj/machinery/plumbing/output/Initialize(mapload, bolt, layer)
 	. = ..()
-	AddComponent(/datum/component/plumbing/simple_demand, bolt, layer)
+	AddComponent(/datum/component/plumbing/demand/south, bolt, layer)
 
 /obj/machinery/plumbing/tank
 	name = "chemical tank"

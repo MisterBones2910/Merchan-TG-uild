@@ -8,9 +8,9 @@
 	var/use_overlays = TRUE
 	///Whether our tile is covered and we should hide our ducts
 	var/tile_covered = FALSE
-	///directions in wich we act as a supplier
+	///directions in which we act as a supplier
 	var/supply_connects
-	///direction in wich we act as a demander
+	///direction in which we act as a demander
 	var/demand_connects
 	///FALSE to pretty much just not exist in the plumbing world so we can be moved, TRUE to go plumbo mode
 	var/active = FALSE
@@ -212,6 +212,7 @@
 			for(var/obj/machinery/duct/duct in get_step(parent, D))
 				if(duct.duct_layer == ducting_layer)
 					duct.remove_connects(turn(D, 180))
+					duct.neighbours.Remove(parent)
 					duct.update_appearance()
 
 ///settle wherever we are, and start behaving like a piece of plumbing
@@ -334,12 +335,30 @@
 		set_recipient_reagents_holder(null)
 
 ///has one pipe input that only takes, example is manual output pipe
-/datum/component/plumbing/simple_demand
+/datum/component/plumbing/demand/north
+	demand_connects = NORTH
+
+/datum/component/plumbing/demand/south
 	demand_connects = SOUTH
 
+/datum/component/plumbing/demand/east
+	demand_connects = EAST
+
+/datum/component/plumbing/demand/west
+	demand_connects = WEST
+
 ///has one pipe output that only supplies. example is liquid pump and manual input pipe
-/datum/component/plumbing/simple_supply
+/datum/component/plumbing/supply/north
+	supply_connects = NORTH
+
+/datum/component/plumbing/supply/south
 	supply_connects = SOUTH
+
+/datum/component/plumbing/supply/east
+	supply_connects = EAST
+
+/datum/component/plumbing/supply/west
+	supply_connects = WEST
 
 ///input and output, like a holding tank
 /datum/component/plumbing/tank
