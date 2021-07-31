@@ -2,7 +2,7 @@
 	name = "12g shotgun slug"
 	damage = 35
 	sharpness = SHARP_POINTY
-	armour_penetration = 80
+	armour_penetration = 30
 	wound_bonus = 0
 
 /obj/projectile/bullet/shotgun_slug/executioner
