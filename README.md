@@ -1,3 +1,5 @@
+# This repository has moved to https://github.com/The-Merchants-Guild/Merchant-Station-13/
+
 ## /tg/station codebase
 
 [![Build Status](https://github.com/tgstation/tgstation/workflows/CI%20Suite/badge.svg)](https://github.com/tgstation/tgstation/actions?query=workflow%3A%22CI+Suite%22)
